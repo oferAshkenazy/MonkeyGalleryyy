@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MonkeyGallery.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MonkeyGallery"
+    Shell.FlyoutBehavior="Disabled"
+     xmlns:sys="clr-namespace:System;assembly=netstandard"
+    xmlns:views="clr-namespace:MonkeyGallery.Views"
+    x:Name="shell"
+    FlyoutBackgroundImage="photo.jpg"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+    
+
+    <!--ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" /-->
+
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" Route="Monkey">
+       
+          
+            <ShellContent
+            Title="Monkeys"
+            ContentTemplate="{DataTemplate views:MonkeyView}"
+            Icon="monkey.png"
+            Route="Monkey" />
+    </FlyoutItem>
+    
+    
+
+
+    <MenuItem
+        Command="{Binding HelpCommand}"
+        CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell"
+        IconImageSource="help.png"
+        Text="Help" />
+
+
+</Shell>
